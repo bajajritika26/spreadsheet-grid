@@ -254,7 +254,7 @@ const SpreadsheetGrid: React.FC = () => {
         {headerCells.map((cell, i) => (
           <div
             key={`h-${i}`}
-            className={`row-start-2 row-end-3 col-start-[${i + 1}] col-end-[${i + 2}] border px-1 flex items-center justify-between text-xs relative ${cell.bg}`}
+            className={`${i === 0 ? 'justify-center' : ''} row-start-2 row-end-3 col-start-[${i + 1}] col-end-[${i + 2}] border px-1 flex items-center justify-between text-xs relative ${cell.bg}`}
           >
             <div className="flex items-center gap-1">
               <img src={cell.icon} alt="" />
@@ -319,7 +319,7 @@ const SpreadsheetGrid: React.FC = () => {
                 <div
                   key={`row-${rowIndex}-${cellIndex + 1}`}
                   id={`cell-${rowIndex + 3}-${cellIndex + 2}`}
-                  className={` text-gray-700 border flex items-center justify-left text-xs overflow-hidden text-ellipsis whitespace-nowrap px-1 ${cellIndex === 1 || cellIndex === 7 || cellIndex === 8 ? "justify-end" : "justify-left"} ${cellIndex === 2 && "justify-center"} ${cellIndex === 6 && 'justify-center'}`}
+                  className={` text-gray-700 border flex items-center justify-left text-xs overflow-hidden text-ellipsis whitespace-nowrap px-1 ${cellIndex === 1 || cellIndex === 7 || cellIndex === 8 ? "justify-end" : "justify-left"} ${cellIndex === 2 && "justify-center"} ${cellIndex === 6 && 'justify-center'} ${cellIndex === 4 && 'underline'}`}
 
                   style={{
                     gridColumnStart: cellIndex + 2,
